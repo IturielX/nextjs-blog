@@ -31,7 +31,7 @@ export default function Home({ allPostsData }) {
           <a href="https://nextjs.org/learn">our Next.js tutorial</a>.)
         </p>
         <h1 className="title">
-          Read <Link href="/posts/first-post">this page!</Link>
+          Read <Link href="/posts/App">this page!</Link>
         </h1>
       </section>
       <section className={`${utilStyles.headingMd} ${utilStyles.padding1px}`}>
