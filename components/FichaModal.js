@@ -3,14 +3,22 @@ import Diagonal from "./Diagonal";
 import TablaModal from "./TablaModal";
 
 
-const FichaModal = ({ title, mostrarDiagonal = false, colorIzquierdoDiagonal = "gray", colorDerechoDiagonal = "black", colorTitulo = 'none', colorCuerpo }) => {
+const FichaModal = ({ title, mostrarDiagonal = false, colorIzquierdoDiagonal = "gray", colorDerechoDiagonal = "black", colorFondoTitulo = 'none', colorFondoCuerpo, colorTitulo }) => {
 
   let modal__dialog1 = {
-    background: colorTitulo,
+    background: colorFondoTitulo,
+    color: colorTitulo,
   };
 
   let modal__dialog2 = {
-    background: colorCuerpo,
+    background: colorFondoCuerpo,
+  };
+
+  let modal__footer = {
+    background: colorFondoTitulo,
+    color: colorTitulo,
+    display: 'flex',
+    justifyContent: 'center',
   };
 
   return (
@@ -26,11 +34,14 @@ const FichaModal = ({ title, mostrarDiagonal = false, colorIzquierdoDiagonal = "
       )}
       <div className="modal__dialog2" style={modal__dialog2}>
 
-        <TablaModal />
+        <TablaModal
+          colorBorde={colorIzquierdoDiagonal}
+          colorLetra={colorDerechoDiagonal}
+        />
 
       </div>
-      <div className="modal-footer">
-        <p>Este es el Footer fijo</p>
+      <div className="modal__footer" style={modal__footer}>
+        <p>↓</p>
       </div>
 
     </>

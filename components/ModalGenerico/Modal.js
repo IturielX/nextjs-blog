@@ -7,14 +7,14 @@ const Modal = ({
   children,
   alto = 600,
   ancho = 600,
-  color = 'none',
+  colorBackground = 'none',
   posicionIzquierda = 0,
   posicionArriba = 0
 }) => {
   let modal__dialogo = {
     height: `${alto}px`,
     width: `${ancho}px`,
-    background: color,
+    background: colorBackground,
     left: posicionIzquierda,
     top: posicionArriba,
 
@@ -33,7 +33,9 @@ const Modal = ({
           style={modal__dialogo}
         >
           <div className="espacio_cerrar">
-            <button onClick={closeModal}>Close Modal</button>
+            <div className="contenedor-cerrar">
+              <img src="/images/cerrar-ventana.png" alt="Cerrar" onClick={closeModal}></img>
+            </div>
           </div>
           {children}
         </div>
