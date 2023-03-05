@@ -10,12 +10,14 @@
 .modal__dialog2 {
     padding: 20px;
     width: 100%;
-/*     height: 70%; */
+    height: 70%;
     overflow-y: scroll;
     box-sizing: border-box;
+    overflow-y: scroll;
     
 }
 
-.modal-footer {
-    background-color: purple;
+.modal__footer {
+   background-color: purple;
+    
 }

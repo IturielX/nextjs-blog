@@ -11,10 +11,12 @@ const App = () => {
     const [isOpenLoginModal, openLoginModal, closeLoginModal] = useModal();
     const [isOpenChatModal, openChatModal, closeChatModal] = useModal();
     const coloresFondos = {
-        colorTitulo: '#98e1df',
-        colorCuerpo: '#bee8e8',
-        colorIzquierdoDiagonal: '#e5e5e5',
-        colorDerechoDiagonal: "#091f2a"
+        colorTitulo: 'none',
+        colorCuerpo: 'none',
+    }
+    const coloresDiagonal = {
+        colorIzquierdo: '#1363DF',
+        colorDerecho: "#47B5FF"
     }
 
     const eventoBotonOpenChatModal = () => {
@@ -27,33 +29,40 @@ const App = () => {
         closeChatModal();
     };
 
+    console.log('isOpenLoginModal', isOpenLoginModal);
     return (
         <>
-            <div className={styles.backToHome}>
-                <Link href="/">← Back to home</Link>
-            </div>
             <div>
-                <button onClick={eventoBotonOpenModal}>Open Modal</button>
+                {(isOpenLoginModal === false && isOpenChatModal === false) &&
+                    <>
+                        <button onClick={eventoBotonOpenModal}>Open Modal</button>
 
-                <button onClick={eventoBotonOpenChatModal}>Open Chat Modal</button>
+                        <button onClick={eventoBotonOpenChatModal}>Open Chat Modal</button>
 
+                        <div className={styles.backToHome}>
+                            <Link href="/">← Back to home</Link>
+                        </div>
+
+                    </>
+                }
                 <Modal
                     isOpen={isOpenLoginModal}
                     closeModal={closeLoginModal}
-                    alto={400}
+                    alto={500}
                     ancho={600}
-                    color={coloresFondos.colorTitulo}
-                    posicionIzquierda={100}
-                    posicionArriba={20}
+                    colorBackground={coloresFondos.colorTitulo}
+                    posicionIzquierda={'10%'}
+                    posicionArriba={'10%'}
 
                 >
                     <FichaModal
                         title="Login"
                         mostrarDiagonal={true}
-                        colorIzquierdoDiagonal={coloresFondos.colorIzquierdoDiagonal}
-                        colorDerechoDiagonal={coloresFondos.colorDerechoDiagonal}
-                        colorTitulo={coloresFondos.colorTitulo}
-                        colorCuerpo={coloresFondos.colorCuerpo}
+                        colorIzquierdoDiagonal={coloresDiagonal.colorIzquierdo}
+                        colorDerechoDiagonal={coloresDiagonal.colorDerecho}
+                        colorFondoTitulo={coloresFondos.colorTitulo}
+                        colorFondoCuerpo={coloresFondos.colorCuerpo}
+                        colorTitulo={coloresDiagonal.colorIzquierdo}
                     />
 
                 </Modal>

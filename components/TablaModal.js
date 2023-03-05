@@ -1,50 +1,62 @@
 import React from 'react'
 
 
-
-const TablaModal = () => {
-
+const TablaModal = ({ colorBorde, colorLetra }) => {
+    console.log('colorBorde', colorBorde)
+    let colorLetras = {
+        color: colorLetra,
+        fontWeight: `bolder`,
+    }
+    let colorBordeExterior = {
+        border: `${colorBorde} 5px solid`,
+    };
+    let colorBordeInterior = {
+        border: `${colorBorde} 1px solid`,
+    };
     return (
         <>
 
-            <table>
-                <tbody>
-                    <tr>
-                        <td>{ }</td>
-                        <td>Gratis</td>
-                    </tr>
-                    <tr>
-                        <td>Chanchito feliz</td>
-                        <td>19,90$</td>
-                    </tr>
-                    <tr>
-                        <td>Chanchito muy feliz</td>
-                        <td>20,90$</td>
-                    </tr>
-                    <tr>
-                        <td></td>
-                        <td>21,90$</td>
-                        <td>dos</td>
-                    </tr>
-                    <tr>
-                        <td></td>
-                        <td>22,90$</td>
-                        <td>doos</td>
-                    </tr>
-                    <tr>
-                        <td>Chanchito muy happy</td>
-                        <td>25,90$</td>
-                    </tr>
-
+            <table  style={colorBordeExterior}>
+                <tbody style={colorLetras} >
+                        <tr style={colorBordeInterior}>
+                            <td style={colorBordeInterior}>{ }</td>
+                            <td style={colorBordeInterior}>Gratis</td>
+                        </tr>
+                        <tr style={colorBordeInterior}>
+                            <td style={colorBordeInterior}>Chanchito feliz</td>
+                            <td style={colorBordeInterior}>19,90$</td>
+                        </tr>
+                        <tr style={colorBordeInterior}>
+                            <td style={colorBordeInterior}>Chanchito muy feliz</td>
+                            <td style={colorBordeInterior}>20,90$</td>
+                        </tr>
+                        <tr style={colorBordeInterior}>
+                            <td style={colorBordeInterior}></td>
+                            <td style={colorBordeInterior}>21,90$</td>
+                            <td style={colorBordeInterior}>dos</td>
+                        </tr>
+                        <tr style={colorBordeInterior}>
+                            <td style={colorBordeInterior}></td>
+                            <td style={colorBordeInterior}>22,90$</td>
+                            <td style={colorBordeInterior}>doos</td>
+                        </tr>
+                        <tr style={colorBordeInterior}>
+                            <td style={colorBordeInterior}>Chanchito muy happy</td>
+                            <td style={colorBordeInterior}>25,90$</td>
+                        </tr>
                 </tbody>
             </table>
             <br />
             <div> Item </div>
             <div>Item</div>
             <div>Item</div>
+            <div> Item </div>
+            <div>Item</div>
+            <div>Item</div>
+            <div> Item </div>
+            <div>Item</div>
+            <div>Item</div>
         </>
-
-
     )
 
 }

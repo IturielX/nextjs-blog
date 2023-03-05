@@ -1,14 +1,8 @@
 table{
-    border: black 1px solid;
     border-collapse: collapse;
 }
 
-tbody{
-    border: blue 5px solid;
-
-}
-
 td{
-    border: black 1px solid;
+    border: 1px solid;
     font-weight: bolder;
 }
