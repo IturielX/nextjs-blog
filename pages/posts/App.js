@@ -11,12 +11,12 @@ const App = () => {
     const [isOpenLoginModal, openLoginModal, closeLoginModal] = useModal();
     const [isOpenChatModal, openChatModal, closeChatModal] = useModal();
     const coloresFondos = {
-        colorTitulo: 'none',
-        colorCuerpo: 'none',
+        titulo: 'none',
+        cuerpo: 'none',
     }
     const coloresDiagonal = {
-        colorIzquierdo: '#1363DF',
-        colorDerecho: "#47B5FF"
+        izquierdo: '#1363DF',
+        derecho: "#47B5FF"
     }
 
     const eventoBotonOpenChatModal = () => {
@@ -35,9 +35,12 @@ const App = () => {
             <div>
                 {(isOpenLoginModal === false && isOpenChatModal === false) &&
                     <>
-                        <button onClick={eventoBotonOpenModal}>Open Modal</button>
+                    <div className="contenedor-botones">
 
-                        <button onClick={eventoBotonOpenChatModal}>Open Chat Modal</button>
+                        <button className="btn-borde" onClick={eventoBotonOpenModal}>Open Modal</button>
+
+                        <button className="btn-borde" onClick={eventoBotonOpenChatModal}>Open Chat Modal</button>
+                    </div>
 
                         <div className={styles.backToHome}>
                             <Link href="/">← Back to home</Link>
@@ -50,7 +53,8 @@ const App = () => {
                     closeModal={closeLoginModal}
                     alto={500}
                     ancho={600}
-                    colorBackground={coloresFondos.colorTitulo}
+                    colorBackground={coloresFondos.titulo}
+                    borde={coloresDiagonal.derecho}
                     posicionIzquierda={'10%'}
                     posicionArriba={'10%'}
 
@@ -58,11 +62,11 @@ const App = () => {
                     <FichaModal
                         title="Login"
                         mostrarDiagonal={true}
-                        colorIzquierdoDiagonal={coloresDiagonal.colorIzquierdo}
-                        colorDerechoDiagonal={coloresDiagonal.colorDerecho}
-                        colorFondoTitulo={coloresFondos.colorTitulo}
-                        colorFondoCuerpo={coloresFondos.colorCuerpo}
-                        colorTitulo={coloresDiagonal.colorIzquierdo}
+                        colorIzquierdoDiagonal={coloresDiagonal.izquierdo}
+                        colorDerechoDiagonal={coloresDiagonal.derecho}
+                        colorFondoTitulo={coloresFondos.titulo}
+                        colorFondoCuerpo={coloresFondos.cuerpo}
+                        colorTitulo={coloresDiagonal.izquierdo}
                     />
 
                 </Modal>
@@ -74,7 +78,8 @@ const App = () => {
                     title="Chat"
                     alto={200}
                     ancho={300}
-                    color={coloresFondos.colorTitulo}
+                    colorBackground={coloresFondos.colorTitulo}
+                    borde={coloresDiagonal.derecho}
                     posicionIzquierda={400}
                     posicionArriba={460}
 

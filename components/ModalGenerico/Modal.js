@@ -9,7 +9,8 @@ const Modal = ({
   ancho = 600,
   colorBackground = 'none',
   posicionIzquierda = 0,
-  posicionArriba = 0
+  posicionArriba = 0,
+  borde = 'none',
 }) => {
   let modal__dialogo = {
     height: `${alto}px`,
@@ -17,7 +18,7 @@ const Modal = ({
     background: colorBackground,
     left: posicionIzquierda,
     top: posicionArriba,
-
+    border: `${borde} 1px solid`,
   };
 
   const handleModalDialogClick = (e) => {
